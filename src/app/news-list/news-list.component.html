@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>News List</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<cdk-virtual-scroll-viewport itemSize="100">
+  <div class="container">
+    <mat-card *cdkVirtualFor="let article of articles" (click)="onSingleNews(article)" [routerLink]="['/detail/', article.id]" >
+      <img mat-card-sm-image src="favicon.ico" alt="news-image">
+      <mat-card-header><strong>{{article.title}}</strong></mat-card-header>
+      <mat-card-content>{{article.body}}</mat-card-content>
+    </mat-card>
+  </div>
+</cdk-virtual-scroll-viewport>

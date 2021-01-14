@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon color="p-light" (click)="backClicked()">keyboard_backspace</mat-icon>
+    <span>News Detail</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+  <img mat-card-sm-image src="favicon.ico" alt="news-image" >
+  <mat-card-header><strong>{{item.title}}</strong></mat-card-header>
+  <mat-card-content>{{item.body}}</mat-card-content>
+</mat-card>
+<section *ngFor="let comment of comments">
+  <div class="comment_container">
+    <div>
+  <img mat-card-sm-image src="favicon.ico" alt="news-image" >
+      <p>это имя</p>
+    </div>
+  <p class="triangle-left">{{comment.body}}</p>
+  </div>
+
+</section>
